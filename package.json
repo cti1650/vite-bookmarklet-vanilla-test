@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp config.json dist/",
     "preview": "vite preview",
     "test": "jest",
     "build:bookmarklet": "vite build && cp config.json dist/"
