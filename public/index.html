@@ -3,53 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Bookmarklet</title>
+    <title id="page-title">My Awesome Bookmarklet</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #eef2f7;
         }
         .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             width: 100%;
+            text-align: center;
         }
         h1 {
             color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
         p {
-            color: #666;
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
         .button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            margin-right: 10px;
+            border-radius: 8px;
             cursor: pointer;
             border: none;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         .button:hover {
             background-color: #0056b3;
         }
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+        }
+
+        /* アイコンボタン用のスタイル */
+        .icon-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .icon-button svg {
+            width: 24px;
+            height: 24px;
+            fill: #007bff;
+            transition: fill 0.3s ease;
+        }
+        .icon-button:hover svg {
+            fill: #0056b3;
+        }
+
         #copy-success {
             color: green;
             margin-top: 10px;
+            font-size: 0.9rem;
             display: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .button {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
         }
     </style>
 </head>
@@ -59,7 +105,12 @@
         <p id="bookmarklet-description"></p>
         <p id="bookmarklet-instructions"></p>
         <a href="#" id="bookmarklet-link" class="button">Bookmarklet</a>
-        <button id="copy-button" class="button">Copy Code</button>
+        
+        <!-- コピーアイコンボタン -->
+        <button id="copy-button" class="icon-button" aria-label="Copy code">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"></path></svg>
+        </button>
+
         <p id="copy-success">Code copied successfully!</p>
     </div>
     <script src="script.js"></script>
