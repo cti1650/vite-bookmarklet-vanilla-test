@@ -1,0 +1,21 @@
+{
+  "name": "vite-bookmarklet-vanilla-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "build:bookmarklet": "vite build && cp config.json dist/"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.25.8",
+    "@testing-library/jest-dom": "^6.5.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "terser": "^5.34.1",
+    "vite": "^5.4.8"
+  }
+}
